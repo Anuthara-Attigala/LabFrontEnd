@@ -7,8 +7,10 @@ angular.module("labApp").controller("SampleCenterController",["$scope","SampleCe
             //console.log($scope.sampleCenters);
         };
         getSampleCenters();
-        $scope.add=(center)=>{
-            SampleCenterService.add(center).then(()=>{
+        $scope.add=(name,center)=>{
+            center.sampleCenterTypeName=name;
+            console.log(name);
+           SampleCenterService.add(center).then(()=>{
                 getSampleCenters();
             });
         };
@@ -19,8 +21,8 @@ angular.module("labApp").controller("SampleCenterController",["$scope","SampleCe
         }
         function getCenterTypes() {
             SampleCenterService.getTypes().then(types=>{
-                $scope.sampleCenterTypeNames=types;
-
+                $scope.sampleCenterTypes=types;
+                //console.log(types);
             });
 
         };
