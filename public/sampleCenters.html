@@ -1,0 +1,66 @@
+<div class="quote_div">
+    <div>
+
+    </div>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Sample Center Name</th>
+                <th>Sample Center Type</th>
+                <th>In Charge</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Edit</th>
+            </tr>
+            <tr dir-paginate="sampleCenter in sampleCenters|itemsPerPage:5">
+                <td>{{sampleCenter.sampleCenterName}}</td>
+                <td>{{sampleCenter.sampleCenterTypeName}}</td>
+                <td>{{sampleCenter.inCharge}}</td>
+                <td>{{sampleCenter.location}}</td>
+                <td>{{sampleCenter.email}}</td>
+                <td>{{sampleCenter.contactNumber}}</td>
+                <td  ng-model="sampleCenter._id" ng-click="setForm(sampleCenter)"><button class="btn btn-danger">Edit</button></td>
+            </tr>
+        </table>
+        <dir-pagination-controls
+                max-size="5"
+                direction-links="true"
+                boundary-links="true" >
+        </dir-pagination-controls>
+
+    </div>
+    <div class="quote_div">
+        <h3>Add New Sample Center</h3>
+        <table>
+            <tr>
+                <td>Sample Center Name:</td>
+                <td><input type="text" ng-model="center.sampleCenterName"> </td>
+            </tr>
+            <tr>
+                <td>Sample Center Type:</td>
+                <td><select ng-model="center.sampleCenterTypeName" ng-options="x.sampleCenterTypeName for x in sampleCenterTypeNames">
+                </select></td>
+            </tr>
+            <tr>
+                <td>In Charge Name:</td>
+                <td><input type="text" ng-model="center.inCharge"></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td><input ng-model="center.location"></td>
+            </tr>
+            <tr>
+                <td>Email Address:</td>
+                <td><input type="text" ng-model="center.email"> </td>
+            </tr>
+            <tr>
+                <td>Contact Number:</td>
+                <td><input type="text" ng-model="center.contactNumber"></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary" ng-click="add(center)">Add New Center</button> </td>
+            </tr>
+        </table>
+    </div>
+</div>

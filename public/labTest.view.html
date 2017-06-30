@@ -1,0 +1,18 @@
+<div class="quote_div">
+    <h4>Select Test</h4>
+    <select ng-model="selectedTest" ng-options="x.labTestName for x in LabTests">
+    </select>
+    <button class="btn btn-primary" ng-click="getTest(selectedTest._id)">Search</button>
+    <table class="table table-striped">
+        <tr>
+            <th>Field Name</th>
+            <th>Unit</th>
+            <th>Normal Range</th>
+        </tr>
+        <tr ng-repeat="field in testData.fields">
+            <td>{{field.fieldName}}</td>
+            <td>{{field.unit}}</td>
+            <td>{{field.normalRange}}</td>
+        </tr>
+    </table>
+</div>

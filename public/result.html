@@ -1,0 +1,49 @@
+<div class="quote_div">
+    <div>
+        <table>
+            <tr>
+                <td>Test Name: </td>
+                <td>{{nameTest}}</td>
+            </tr>
+            <tr>
+                <td>Patient Name: </td>
+                <td>{{namePatient}} </td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary" ng-click="createResults()">Add Results</button></td>
+            </tr>
+        </table>
+    </div>
+    <!--<button ng-click="getTest()">Show Fields</button>-->
+    <div>
+        <table>
+            <tr>
+                <td>Field Name:</td>
+                <td>
+
+                    <select ng-model="selectedField" ng-options="x.fieldName for x in test.fields">
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td><input ng-model="result"></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary" ng-click="addResult(selectedField.fieldName,result)">Add Result</button></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Field Name</th>
+                <th>Result</th>
+            </tr>
+            <tr ng-repeat="x in resultTobe.result">
+                <td>{{x.fieldName}}</td>
+                <td>{{x.result}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
