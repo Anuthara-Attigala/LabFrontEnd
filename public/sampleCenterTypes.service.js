@@ -1,8 +1,8 @@
 angular.module('labApp').factory("SampleCenterTypeService",['$http',
     function($http){
         return{
-            get: ()=>$http.get('/sampleCenterTypes').then(response =>response.data),
-            add: sampleCenterType=>$http.post('/sampleCenterTypes',sampleCenterType).then(response =>response.data),
-            delete:id=>$http.delete('/sampleCenterTypes/'+id).then(response=>response.data)
+            get: ()=>$http.get('http://localhost:3000/sampleCenterTypes').then(response =>response.data),
+            add: sampleCenterType=>$http.post('http://localhost:3000/sampleCenterTypes',sampleCenterType).then(response =>response.data),
+            delete:id=>$http.delete('http://localhost:3000/sampleCenterTypes/'+id).then(response=>response.data)
         }
     }]);
