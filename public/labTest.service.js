@@ -1,0 +1,9 @@
+angular.module("labApp").factory("LabTestService",['$http',
+    function($http){
+        return{
+            get:()=>$http.get('/labTests').then(response=>response.data),
+            addTest:(test)=>$http.post('/labTests',test).then(response=>response.data),
+            addField:(id,field)=>$http.post('/labTests/'+id+"/fields",field).then(response=>response.data),
+            getTest:(id)=>$http.get('/labTests/'+id).then(response=>response.data)
+        }
+    }]);

@@ -1,0 +1,47 @@
+<div class="quote_div">
+    <div>
+        <h3>Add Lab Test </h3>
+        <table>
+            <tr>
+                <td>Lab Test Name: </td>
+                <td><input type="text" ng-model="test.labTestName"></td>
+            </tr>
+            <tr>
+                <td>Category: </td>
+                <td><input type="text" ng-model="test.category"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><button ng-click="addTest(test)" class="btn btn-primary">Add Test</button></td>
+            </tr>
+        </table>
+
+    </div>
+    <div>
+        <h3>Add Test Fields</h3>
+        <table>
+            <tr>
+                <td>Lab Test Name: </td>
+                <td >
+                    <select ng-model="selectedTest" ng-options="x.labTestName for x in LabTests">
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Field Name:</td>
+                <td><input ng-model="field.fieldName" type="text"></td>
+            </tr>
+            <tr>
+                <td>Unit: </td>
+                <td><input ng-model="field.unit" type="text"> </td>
+            </tr>
+            <tr>
+                <td>Normal Range: </td>
+                <td><input ng-model="field.normalRange" type="text"> </td>
+            </tr>
+            <tr>
+                <td><button ng-click="addField(selectedTest._id,field)" class="btn btn-primary">Add Field</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

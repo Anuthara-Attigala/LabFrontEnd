@@ -1,0 +1,31 @@
+.quote_div{
+    background-color:#c9d2e0;
+    height:40%;
+    margin-top:5%;
+    margin-left:5%;
+    margin-right:5%;
+    padding-left:3%;
+    padding-right:3%;
+    opacity: 0.9;
+}
+.main-title{
+    font-family:"La Belle Aurore";
+    color:#ffffff;
+}
+.bodyImg{
+    background-image: url("lab3.jpg");
+    background-repeat: no-repeat;
+}
+.content{
+
+    margin-top:7%;
+    margin-left:15%;
+    margin-right:15%;
+    padding-top:10%;
+    padding-left:23%;
+    padding-right:13%
+}
+#quote-title{
+    color:#ffffff;
+    font-family:"Allura";
+}
