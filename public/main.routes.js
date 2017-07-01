@@ -31,7 +31,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
             templateUrl : 'test2.html',
             controller : 'testController'
-        }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestID',{
+        }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestId',{
             templateUrl : 'result.html',
             controller :'ResultController'
         }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {

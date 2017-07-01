@@ -27,19 +27,19 @@ angular.module('labApp').controller("reportController",['$scope','reportService'
             });
         }
         function getID() {
-            reportService.getById($routeParams.requestID).then(request => {
+            reportService.getById($routeParams.requestId).then(request => {
                 $scope.request = {};
                 // console.log($scope.request);
                 $scope.request = request[0];
                 console.log($scope.request);
-                $scope.requestID = request[0].requestID;
+                $scope.requestId = request[0].requestId;
                 $scope.patientName = request[0].patientName;
                 $scope.reqPerson = request[0].reqPerson;
                 $scope.testName = request[0].testName;
             })
         };
        function getDetails() {
-           reportService.getsDetails($routeParams.requestID).then(request => {
+           reportService.getsDetails($routeParams.requestId).then(request => {
                $scope.request = {};
                $scope.request = request[0];
                console.log($scope.request);
