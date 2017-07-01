@@ -23,7 +23,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl: 'pharmacy.html',
             controller: 'pharmacyController'
         }).when('/test',{
-            templateUrl : 'labtest.html',
+            templateUrl : 'labrequest.html',
             controller : 'testController'
         }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
             templateUrl : 'test2.html',
