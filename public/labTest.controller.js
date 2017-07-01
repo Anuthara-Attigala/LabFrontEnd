@@ -1,5 +1,5 @@
-angular.module("labApp").controller('LabTestController',['$scope','LabTestService',
-    function ($scope,LabTestService) {
+angular.module("labApp").controller('LabTestController',['$scope','$location','LabTestService',
+    function ($scope,$location,LabTestService) {
         function getTests() {
             LabTestService.get().then(tests=>{
                 $scope.LabTests=tests;
@@ -27,5 +27,11 @@ angular.module("labApp").controller('LabTestController',['$scope','LabTestServic
                 $scope.testData=testData
         })
         }
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
 
     }])

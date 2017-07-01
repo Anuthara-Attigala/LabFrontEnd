@@ -10,5 +10,11 @@ angular.module("labApp").controller("LoginController",['$scope','$location',
             else{
                 alert("Incorrect username")
             }
-        }
+        };
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
+
     }]);

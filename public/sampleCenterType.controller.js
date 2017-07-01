@@ -1,5 +1,5 @@
-angular.module("labApp").controller("SampleCenterTypeController",['$scope','SampleCenterTypeService',
-    function($scope,SampleCenterTypeService){
+angular.module("labApp").controller("SampleCenterTypeController",['$scope','$location','SampleCenterTypeService',
+    function($scope,$location,SampleCenterTypeService){
         function getSampleCenterTypes(){
             SampleCenterTypeService.get().then(sampleCenterTypes =>{
                 $scope.sampleCenterTypes=sampleCenterTypes;
@@ -18,4 +18,11 @@ angular.module("labApp").controller("SampleCenterTypeController",['$scope','Samp
                 getSampleCenterTypes();
             })
         };
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
+
     }]);

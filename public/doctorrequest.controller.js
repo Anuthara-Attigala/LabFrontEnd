@@ -1,5 +1,5 @@
-angular.module("labApp").controller('DocRequestController',['$scope','DocRequestService','LabTestService',
-    function ($scope,DocRequestService,LabTestService) {
+angular.module("labApp").controller('DocRequestController',['$scope','$location','DocRequestService','LabTestService',
+    function ($scope,$location,DocRequestService,LabTestService) {
         function getRequests() {
             DocRequestService.get().then(docreq=>{
                 $scope.doctorrequest=docreq;
@@ -43,5 +43,9 @@ angular.module("labApp").controller('DocRequestController',['$scope','DocRequest
         //         $scope.testData=testData    ///*************////
         //     })
         // }
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
 
-    }])
+    }]);

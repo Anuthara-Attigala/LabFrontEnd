@@ -1,15 +1,21 @@
 <div class="quote_div">
     <table>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
         <tr>
             <td>User Name: </td>
-            <td><input type="text" ng-model="username"></td>
+            <td><input type="text" class="form-control" ng-model="username" placeholder="username" required=""/></td>
         </tr>
         <tr>
             <td>Password: </td>
-            <td><input type="text" ng-model="password"> </td>
+            <td><input type="password" class="form-control" ng-model="password" placeholder="password" required=""/></td>
         </tr>
         <tr>
-            <td><button ng-click="login(username,password)">Login</button></td>
+            <td><button class="btn btn-success" ng-click="login(username,password)">Login</button><br></td>
         </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
     </table>
 </div>

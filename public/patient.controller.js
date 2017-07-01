@@ -1,5 +1,5 @@
-angular.module("labApp").controller("PatientController",["$scope","PatientService",
-    function($scope,PatientService){
+angular.module("labApp").controller("PatientController",["$scope",'$location',"PatientService",
+    function($scope,$location,PatientService){
 
         function getPatients(){
             PatientService.get().then(patients=>{
@@ -10,14 +10,33 @@ angular.module("labApp").controller("PatientController",["$scope","PatientServic
 
         $scope.deletepatient=(patient)=>{
             var id=patient._id;
-            SampleCenterTypeService.delete(id).then(()=>{
+            PatientService.deletepatient(id).then(()=>{
                 getPatients();
         })
         };
+
+//edit-----------------
+        $scope.edit =(request)=>{
+            getPatientDetails();
+        }
+
+//---------------
+        $scope.updatepatient=(patient)=>{
+            PatientService.updatepatient(patient).then(()=>{
+                getPatients();
+            });
+        };
+
         // function getLabTests(){
         //     PatientService.getLabTests().then(labTests=>{
         //         $scope.labTests=labTests;
         //     })
         // }
         // getLabTests();
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
     }]);
