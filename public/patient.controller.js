@@ -16,8 +16,9 @@ angular.module("labApp").controller("PatientController",["$scope",'$location',"P
         };
 
 //edit-----------------
-        $scope.edit =(request)=>{
-            getPatientDetails();
+        $scope.editpatient =(patient1)=>{
+            $scope.patient=patient1;
+            //getPatientDetails();
         }
 
 //---------------

@@ -39,13 +39,13 @@
             <th>Date of Birth</th>
         </tr>
         </thead>
-        <tr ng-repeat="patient in patients">
-            <td>{{patient.patientName}}</td>
-            <td>{{patient.gender}}</td>
-            <td>{{patient.contactNumber}}</td>
-            <td>{{patient.dob|date:"yyyy-MM-dd"}}</td>
-            <td><button class="btn btn-danger" ng-model="patient._id" ng-click="deletepatient(patient)">Delete</button></td>
-            <td><button class="btn btn-primary" ng-click="editpatient(patient)">Edit</button></td>
+        <tr ng-repeat="patient1 in patients">
+            <td>{{patient1.patientName}}</td>
+            <td>{{patient1.gender}}</td>
+            <td>{{patient1.contactNumber}}</td>
+            <td>{{patient1.dob|date:"yyyy-MM-dd"}}</td>
+            <td><button class="btn btn-danger" ng-model="patient._id" ng-click="deletepatient(patient1)">Delete</button></td>
+            <td><button class="btn btn-primary" ng-click="editpatient(patient1)">Edit</button></td>
 
         </tr>
     </table>
