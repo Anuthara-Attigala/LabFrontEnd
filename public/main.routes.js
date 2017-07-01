@@ -40,7 +40,13 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/labdepartments',{
             templateUrl:"department.html",
             controller:"DepartmentController"
-        });
+        }).when('/test',{
+            templateUrl : 'test.html',
+            controller : 'testController'
+       }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
+            templateUrl : 'test2.html',
+            controller : 'testController'
+});
 
         $locationProvider.html5Mode(true);
     }]);
