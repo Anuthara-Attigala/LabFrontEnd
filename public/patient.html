@@ -6,37 +6,7 @@
                 <a class="navbar-brand">Laboratory System</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lab Requests <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href=test>New Lab Requests</a></li>
 
-                    </ul>
-                </li>
-
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Chemical Inventory Management<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="pharmacy">Chemical Inventory</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lab Test Management <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="labtestview">View Lab Tests</a></li>
-                        <li><a href="labtests">Lab Tests</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sample Center Management <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="samplecentertypes">Sample Center Types</a></li>
-                        <li><a href="samplecenter">Sample Centers</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Sample Center Management <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="labdepartments">Department Management</a></li>
-                        <li><a href="labmgmt">Laboratory Management</a></li>
-                    </ul>
-                </li>
 
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Doctor <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -49,6 +19,10 @@
                         <li><a href="patientmanagement">Patient Management</a></li>
                         <li><a href="newrequests">Patient Details</a></li>
                     </ul>
+                </li>
+
+                <li class="dropdown">
+                    <button class="btn btn-success" ng-click="logout()">Logout</button>
                 </li>
 
             </ul>
@@ -70,7 +44,8 @@
             <td>{{patient.gender}}</td>
             <td>{{patient.contactNumber}}</td>
             <td>{{patient.dob|date:"yyyy-MM-dd"}}</td>
-            <td ng-model="patient._id" ng-click="deletepatient(patient)"><button class="btn btn-danger">Delete</button></td>
+            <td><button class="btn btn-danger" ng-model="patient._id" ng-click="deletepatient(patient)">Delete</button></td>
+            <td><button class="btn btn-primary" ng-click="editpatient(patient)">Edit</button></td>
 
         </tr>
     </table>
@@ -112,7 +87,7 @@
             <!--<td><input type="text"></td>-->
         <!--</tr>-->
         <tr>
-            <td ><button class="btn btn-primary" ng-click="updatepatient(patient)">Update</button></td>
+            <td ><button class="btn btn-primary" ng-model="request._id" ng-click="updatepatient(patient)">Update</button></td>
         </tr>
     </table>
     </div>

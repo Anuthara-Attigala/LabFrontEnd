@@ -1,5 +1,5 @@
-angular.module("labApp").controller("PatientManagementController",["$scope","PatientManagementService",
-    function($scope,PatientManagementService){
+angular.module("labApp").controller("PatientManagementController",["$scope","$location","PatientManagementService",
+    function($scope,$location,PatientManagementService){
 
         function getPatients(){
             PatientManagementService.get().then(patients=>{
@@ -19,6 +19,11 @@ angular.module("labApp").controller("PatientManagementController",["$scope","Pat
             PatientManagementService.updatepatient(patient).then(()=>{
                 getPatients();
         });
+        };
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
         };
 
     }]);

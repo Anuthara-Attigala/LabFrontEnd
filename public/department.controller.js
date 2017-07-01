@@ -1,5 +1,5 @@
-angular.module("labApp").controller("DepartmentController",['$scope','DepartmentService',
-    function($scope, DepartmentService){
+angular.module("labApp").controller("DepartmentController",['$scope','$location','DepartmentService',
+    function($scope, $location, DepartmentService){
         function getDepartments(){
             DepartmentService.get().then(departments =>{
                 $scope.departments=departments;
@@ -18,4 +18,10 @@ angular.module("labApp").controller("DepartmentController",['$scope','Department
                 getDepartments();
             })
         };
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
     }]);

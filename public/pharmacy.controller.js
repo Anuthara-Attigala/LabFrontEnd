@@ -3,8 +3,8 @@
  */
 'use strict'
 
-angular.module('labApp').controller('pharmacyController',['$scope','pharmacyService',
-            function ($scope,pharmacyService) {
+angular.module('labApp').controller('pharmacyController',['$scope','$location','pharmacyService',
+            function ($scope,$location,pharmacyService) {
 
                 function getUsers() {
                     pharmacyService.get().then(users=>{
@@ -75,5 +75,12 @@ angular.module('labApp').controller('pharmacyController',['$scope','pharmacyServ
                 $scope.clearUser=(user)=> {
                     $scope.user = {};
                     //$scope.user.drugID="";
-                }
+                };
+
+                $scope.logout=()=>
+                {
+                    $location.path('/');
+                };
+
+
             }]);
