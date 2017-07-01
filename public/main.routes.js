@@ -4,7 +4,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl: 'samplecentertype.html',
             controller: 'SampleCenterTypeController'
         }).when('/labtests',{
-            templateUrl:"test.html",
+            templateUrl:"labtest.html",
             controller:"LabTestController"
         }).when('/labtestview',{
             templateUrl:"labTest.view.html",
