@@ -1,5 +1,4 @@
 <div>
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -18,6 +17,7 @@
                         <li><a href="pharmacy">Chemical Inventory</a></li>
                     </ul>
                 </li>
+
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lab Test Management <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="labtestview">View Lab Tests</a></li>
@@ -38,47 +38,91 @@
                     </ul>
                 </li>
 
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Doctor <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="newdocRequest">New Request</a></li>
-                        <!--<li><a href="doctorrequest">View Request</a></li>-->
-                    </ul>
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="patientmanagement">Patient Management</a></li>
-                        <li><a href="newrequests">Patient Details</a></li>
-                    </ul>
-                </li>
+
 
             </ul>
         </div>
     </nav>
-    <div class="quote_div">
-    <h3>Add New Patients</h3>
-    <table>
-        <tr>
-            <td>Patient Name: </td>
-            <td><input type="text" ng-model="patient.patientName"></td>
-        </tr>
-        <tr>
-            <td>Gender: </td>
-            <td><input type="text" ng-model="patient.gender"> </td>
-        </tr>
+<div class="quote_div">
+
+    <center>
+        <center><h1>CHEMICAL INVENTORY</h1></center>
+        <table>
 
         <tr>
-            <td>Contact Number: </td>
-            <td><input type="text" ng-model="patient.contactNumber"> </td>
+            <td>Chemical ID </td>
+            <td><input ng-model="user.drugID"></td>
         </tr>
         <tr>
-            <td>Date Of Birth: </td>
-            <td><input type="text" ng-model="patient.dob"></td>
+            <td>Chemical Name </td>
+            <td><input ng-model="user.drugName"></td>
         </tr>
         <tr>
-            <td>
-                <button class="btn btn-primary" ng-click="addPatient(patient)">Add Patient</button>
-            </td>
+            <td>Quantity </td>
+            <td><input ng-model="user.quantity"></td>
+        </tr>
+        <tr>
+            <td>Manufactured Date </td>
+            <td><input ng-model="user.mDate"></td>
+        </tr>
+        <tr>
+            <td>Expiration Date </td>
+            <td><input ng-model="user.eDate"></td>
+        </tr>
+        <tr>
+            <td>Supplier ID</td>
+            <td><input ng-model="user.supplierID"></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td><button class="btn btn-primary" ng-click="addUser(user)">INSERT</button>
+
+            <button class="btn btn-primary" ng-click="clearUser(user)">CLEAR</button> </td>
+        </tr>
+
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td>Drug Code<input ng-model="user.drugID"></td>
+            <td><button class="btn btn-primary" ng-mmodel="user.drugID" ng-click="getUser(user)">SEARCH</button></td>
         </tr>
     </table>
-    </div>
+    </center>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Drug ID</th>
+            <th>Drug Name</th>
+            <th>Quantity</th>
+            <th>Manufactured Date</th>
+            <th>Expiration Date</th>
+            <th>Supplier ID</th>
+            <th>DELETE</th>
+            <th>EDIT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{$index+1}}</td>
+            <td>{{user.drugID}}</td>
+            <td>{{user.drugName}}</td>
+            <td>{{user.quantity}}</td>
+            <td>{{user.mDate|date:"yyyy-MM-dd"}}</td>
+            <td>{{user.eDate|date:"yyyy-MM-dd"}}</td>
+            <td>{{user.supplierID}}</td>
+            <td><button ng-mmodel="user._id" ng-click="deleteUser(user)" class="btn btn-danger">DELETE</button></td>
+
+            <td><button class="btn btn-primary" ng-click="editUser(user)">EDIT</button> </td>
+        </tr>
+        </tbody>
+    </table>
+
 </div>
+</div>
+
+
