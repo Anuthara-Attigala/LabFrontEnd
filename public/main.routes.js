@@ -37,6 +37,9 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
 
         }).when('/sample_collected/:requestID', {
             templateUrl: 'result.html'
+        }).when('/labdepartments',{
+            templateUrl:"department.html",
+            controller:"DepartmentController"
         });
 
         $locationProvider.html5Mode(true);
