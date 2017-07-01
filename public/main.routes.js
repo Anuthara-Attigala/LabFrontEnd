@@ -27,7 +27,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl : 'addSampleDetails.html',
             controller : 'addSampleDetailsController'
         }).when('/test',{
-            templateUrl : 'test.html',
+            templateUrl : 'labtest.html',
             controller : 'testController'
         }).when('/new/:requestID',{
             templateUrl : 'test2.html',
