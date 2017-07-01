@@ -34,6 +34,17 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {
             templateUrl: 'report.html',
             controller : 'reportController'
+        }).when('/sample_collected/:requestID', {
+            templateUrl: 'result.html'
+        }).when('/patientmanagement',{
+            templateUrl:"newPatients.html",
+            controller:"PatientManagementController"
+        }).when('/newrequests',{
+            templateUrl:"patient.html",
+            controller:"PatientController"
+        }).when('/newdocRequest',{
+            templateUrl:"newdocRequest.html",
+            controller:"DocRequestController"
         });
 
         $locationProvider.html5Mode(true);
