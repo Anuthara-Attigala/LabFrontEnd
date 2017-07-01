@@ -1,4 +1,5 @@
 <div>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -53,30 +54,66 @@
             </ul>
         </div>
     </nav>
-<div class="quote_div">
+
+    <div  class="quote_div">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Sample Center Types</th>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Contact Number</th>
+            <th>Date of Birth</th>
         </tr>
         </thead>
-        <tbody>
-        <tr ng-repeat="sampleCenterType in sampleCenterTypes">
-            <td>{{sampleCenterType.sampleCenterTypeName}}</td>
-            <td ng-model="sampleCenterType._id" ng-click="deleteSampleCenterType(sampleCenterType)"><button class="btn btn-danger">DELETE</button></td>
+        <tr ng-repeat="patient in patients">
+            <td>{{patient.patientName}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.contactNumber}}</td>
+            <td>{{patient.dob|date:"yyyy-MM-dd"}}</td>
+            <td ng-model="patient._id" ng-click="deletepatient(patient)"><button class="btn btn-danger">Delete</button></td>
+
         </tr>
-        </tbody>
     </table>
-    <h3>Add Sample Center Type</h3>
+    <h3>Update Patient Details</h3>
     <table>
         <tr>
-            <td>Sample Center Type: </td>
-            <td><input ng-model="sampleCenterType.sampleCenterTypeName"></td>
+            <td>Patient Name: </td>
+            <td><input type="text" ng-model="patient.patientName"></td>
         </tr>
         <tr>
-            <td><button class="btn btn-primary" ng-click="addSampleCenterType(sampleCenterType)">Add New Sample Center</button> </td>
+            <td>Gender : </td>
+            <td><input type="text" ng-model="patient.gender"></td>
+        </tr>
+        <tr>
+            <td>Contact Number: </td>
+            <td><input type="text" ng-model="patient.contactNumber"></td>
+        </tr>
+        <tr>
+            <td>Date of Birth : </td>
+            <td><input type="text" ng-model="patient.dob"></td>
+        </tr>
+        <!--<tr>-->
+            <!--<td>Lab Test: </td>-->
+            <!--<td>-->
+
+                <!--<select>-->
+                    <!--<option ng-repeat="labTest in labTests">{{labTest.labTestName}}</option>-->
+                <!--</select>-->
+
+            <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>Priority: </td>-->
+            <!--<td><input type="Text"></td>-->
+
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>Due Date: </td>-->
+            <!--<td><input type="text"></td>-->
+        <!--</tr>-->
+        <tr>
+            <td ><button class="btn btn-primary" ng-click="updatepatient(patient)">Update</button></td>
         </tr>
     </table>
-
-</div>
+    </div>
 </div>

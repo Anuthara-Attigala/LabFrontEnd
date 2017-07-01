@@ -48,4 +48,32 @@ angular.module("labApp").controller("ResultController",['$scope','$routeParams',
         };
 
 
+        function getRequest() {
+            ResultService.getById($routeParams.requestID).then(request=>{
+                console.log($routeParams.requestID);
+                $scope.request={};
+                $scope.request = request[0];
+                console.log($scope.request);
+                $scope.request.action='View Report';
+                $scope.request.status='report_generated';
+
+                console.log($scope.request);
+            })};
+
+        $scope.edit =(request)=>{
+            getRequest();
+        }
+        $scope.updateAddResults = (request)=>{
+
+            ResultService.update(request).then(()=>{
+                console.log('ABC');
+                console.log(request);
+                // getDetails();
+                alert("successfully updated");
+
+            });
+        };
+
+
+
     }])

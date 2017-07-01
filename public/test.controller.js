@@ -1,6 +1,6 @@
 angular.module('labApp').controller("testController",['$scope','testService','$routeParams',
     function ($scope,testService,$routeParams) {
-     /* ////  function getDetails() {
+        function getDetails() {
             testService.get().then(requests => {
                 $scope.requests = requests;
 
@@ -35,16 +35,34 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
 
             });
         };
+*/
+        function getRequest() {
+            ResultService.getById($routeParams.requestID).then(request=>{
+                console.log($routeParams.requestID);
+                $scope.request={};
+                $scope.request = request[0];
+                console.log($scope.request);
+                $scope.request.action='View Report';
+                $scope.request.status='report_generated';
 
-        /*  getSampleDetails();
-         function getOne(){
-         addSampleDetailsService.getById($routeParams.requestID).then(res=>{
-         $scope.one=res;
-         });
-         };
-         getOne();*/
+                console.log($scope.request);
+            })};
 
-    /*      function getID() {
+        $scope.edit =(request)=>{
+            getRequest();
+        }
+
+
+        $scope.updateAddResults = (request)=>{
+            ResultService.update(request).then(()=>{
+                console.log(request);
+                // getDetails();
+                alert("successfully updated");
+            });
+        };
+
+
+          function getID() {
               testService.getById($routeParams.requestID).then(request => {
                   $scope.request={};
                  // console.log($scope.request);
@@ -65,24 +83,19 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
                $scope.request.reqPerson = request[0].reqPerson;
                $scope.request.comment = request[0].comment;
                $scope.request._id = request[0]._id;
-
-
               })
           }
 
-       */
-          function getlocation() {
+      /*    function getlocation() {
               testService.getLocation().then(location=>{
-                  console.log( 'ABC');
                   $scope.location={};
-                  $scope.location.sampleCenterName=location[0].sampleCenterName;
-                  console.log( $scope.location.sampleCenterName);
+                  $scope.location=location;
+                  console.log( $scope.location);
               })
           }
-          getlocation();
+          getlocation();*/
 
-
-       /*   $scope.edit =(request)=>{
+          $scope.edit =(request)=>{
               getID();
           }
 
@@ -115,80 +128,10 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
           }
 
 
-        //  $scope.addUpdatedRequest = (request) => {
-        //      getID();
-        //  console.log(request[0]);
-        //  addSampleDetailsService.update(request[0]).then(()=>{
-        //    getSampleDetails();
-        // })
-        //  }
-
-
-        //      $scope.updateRequest = (id,request) => {
-
-        //        console.log('ABC');
-        //       console.log(request[0]);
-        //       console.log(id);
-        //      addSampleDetailsService.update(id,request[0]).then(() => {
-        //         getSampleDetails();
-//
-        //    });
-        //  }
-
-
-        /*  $scope.editUser = (request)=>{
-         $scope.request={};
-         $scope.request.action=request.action;
-
-         }*/
 
 
     }]);
-// $scope.updateRequest = (id,request)=>{
-//     console.log(request.action);
-//     addSampleDetailsService.update(id,request).then(()=>{
-//         getSampleDetails();
-//     })
-//  }
 
-//      console.log(request[0]);
-//    addSampleDetailsService.add(request[0]).then(()=>{
-// getID();
-//        request = {};
-//   })
-//  }
-
-
-
-//
-
-// $scope.apply = (request)=>{
-
-
-//    console.log('ABC');
-//    addSampleDetailsService.update(request.action,request.status).then(()=>{
-
-
-//       getSampleDetails();
-//   })
-//  }
-
-//    $scope.update = (request)=>{
-//        console.log(request);
-//        console.log(request.action);
-////        request.action='add results';
-//       request.status='sample_collected';
-//       console.log(request.action);
-//      console.log(request.status);
-//       console.log(request);
-//   }
-//   $scope.save=(requestID)=>{
-
-
-
-
-//   }
-//
 
 
 

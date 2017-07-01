@@ -4,7 +4,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl: 'samplecentertype.html',
             controller: 'SampleCenterTypeController'
         }).when('/labtests',{
-            templateUrl:"labtest.html",
+            templateUrl:"test.html",
             controller:"LabTestController"
         }).when('/labtestview',{
             templateUrl:"labTest.view.html",
@@ -15,34 +15,36 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/samplecenter',{
             templateUrl:"sampleCenters.html",
             controller:"SampleCenterController"
-        }).when('/pharmacy', {
-            templateUrl: 'pharmacy.html',
-            controller: 'MainController'
-
-        }).when('/sampleDetails', {
-            templateUrl: 'sampleDetails.html',
-            controller: 'sampleDetailsController'
-
-        }).when('/addSampleDetails',{
-            templateUrl : 'addSampleDetails.html',
-            controller : 'addSampleDetailsController'
-        }).when('/test',{
-            templateUrl : 'test.html',
-            controller : 'testController'
-        }).when('/new/:requestID',{
-            templateUrl : 'test2.html',
-            controller : 'testController'
-        }).when('/sample_collected/:requestID',{
-            templateUrl : 'result.html'
-
-        }).when('/sample_collected/:requestID', {
-            templateUrl: 'result.html'
         }).when('/labdepartments',{
             templateUrl:"department.html",
             controller:"DepartmentController"
-        }).when('/labmgmt',{
-            templateUrl:"lab.html",
-            controller:"LabController"
+
+        }).when('/pharmacy', {
+            templateUrl: 'pharmacy.html',
+            controller: 'pharmacyController'
+        }).when('/test',{
+            templateUrl : 'labtest.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
+            templateUrl : 'test2.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestID',{
+            templateUrl : 'result.html',
+            controller :'ResultController'
+        }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {
+            templateUrl: 'report.html',
+            controller : 'reportController'
+        }).when('/sample_collected/:requestID', {
+            templateUrl: 'result.html'
+        }).when('/patientmanagement',{
+            templateUrl:"newPatients.html",
+            controller:"PatientManagementController"
+        }).when('/newrequests',{
+            templateUrl:"patient.html",
+            controller:"PatientController"
+        }).when('/newdocRequest',{
+            templateUrl:"newdocRequest.html",
+            controller:"DocRequestController"
         });
 
         $locationProvider.html5Mode(true);
