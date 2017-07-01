@@ -1,52 +1,21 @@
 <div class="quote_div">
     <table class="table table-striped">
+
         <tr>
             <td>Action</td>
             <td><input ng-model="request.action"></td>
         </tr>
         <tr>
-            <td>Priority</td>
-            <td><input ng-model="request.priority"></td>
-        </tr>
-        <tr>
             <td>Status</td>
             <td><input ng-model="request.status"></td>
         </tr>
-        <tr>
-            <td>Request ID</td>
-            <td><input ng-model="request.requestID"></td>
-        </tr>
-        <tr>
-            <td>Patient's Name</td>
-            <td><input ng-model="request.patientName"></td>
-        </tr>
-        <tr>
-            <td>Test Name</td>
-            <td><input ng-model="request.testName"></td>
-        </tr>
-        <tr>
-            <td>Req.Date</td>
-            <td><input ng-model="request.reqDate"></td>
-        </tr>
-        <tr>
-            <td>Due Date</td>
-            <td><input ng-model="request.dueDate"></td>
-        </tr>
-        <tr>
-            <td>Req Person</td>
-            <td><input ng-model="request.reqPerson"></td>
-        </tr>
-        <tr>
-            <td>Comment</td>
-            <td><input ng-model="request.comment"></td>
-        </tr>
+        <td><button ng-click="edit(request)">EDIT</button> </td>
+        <td><button ng-model="request._id" ng-click="updateAddResults(request)">SAVE</button> </td>
+
+        <td><a href="test" ><button ng-click="back(request)">BACK</button></a> </td>
+
 
         <tr>
-            <td>id </td>
-            <td><input ng-model="request._id"></td>
-        </tr>
-        <tr>
-
             <td><button class="btn btn-primary" ng-click="edit(request)">EDIT</button> </td>
             <td><button class="btn btn-primary" ng-model="request._id" ng-click="updateRequest(request)">UPDATE</button> </td>
             <td><a href="test" ><button class="btn btn-primary" ng-click="back(request)">BACK</button></a> </td>
@@ -74,12 +43,6 @@
         <td><input ng-model="detail.location"> </td>
     </tr>
 
-    <tr>
-        <td>Type:</td>
-        <td><select ng-model="selectedCenter" ng-options="x.sampleCenterName for x in sampleCenterNames">
-        </select></td>
-
-    </tr>
     <tr>
       <td><button class="btn btn-primary"  ng-click="addDetails(detail)">SAVE</button> </td>
     </tr>

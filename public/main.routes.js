@@ -15,31 +15,26 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/samplecenter',{
             templateUrl:"sampleCenters.html",
             controller:"SampleCenterController"
-        }).when('/pharmacy', {
-            templateUrl: 'pharmacy.html',
-            controller: 'MainController'
-
-        }).when('/sampleDetails', {
-            templateUrl: 'sampleDetails.html',
-            controller: 'sampleDetailsController'
-
-        }).when('/addSampleDetails',{
-            templateUrl : 'addSampleDetails.html',
-            controller : 'addSampleDetailsController'
-        }).when('/test',{
-            templateUrl : 'test2.html',
-            controller : 'testController'
-
-        }).when('/sample_collected/:requestID',{
-            templateUrl : 'result.html'
-
-        }).when('/sample_collected/:requestID', {
-            templateUrl: 'result.html'
         }).when('/labdepartments',{
             templateUrl:"department.html",
             controller:"DepartmentController"
 
-       });
+        }).when('/pharmacy', {
+            templateUrl: 'pharmacy.html',
+            controller: 'pharmacyController'
+        }).when('/test',{
+            templateUrl : 'labtest.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
+            templateUrl : 'test2.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestID',{
+            templateUrl : 'result.html',
+            controller :'ResultController'
+        }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {
+            templateUrl: 'report.html',
+            controller : 'reportController'
+        });
 
         $locationProvider.html5Mode(true);
     }]);
