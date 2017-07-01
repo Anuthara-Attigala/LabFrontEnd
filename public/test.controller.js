@@ -1,5 +1,5 @@
-angular.module('labApp').controller("testController",['$scope','testService','$routeParams','ResultService',
-    function ($scope,testService,$routeParams,ResultService) {
+angular.module('labApp').controller("testController",['$scope','$location','testService','$routeParams','ResultService',
+    function ($scope,$location,testService,$routeParams,ResultService) {
         function getDetails() {
             testService.get().then(requests => {
                 $scope.requests = requests;
@@ -125,7 +125,13 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
         };
           $scope.back = (request)=>{
               getDetails();
-          }
+          };
+
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
+
 
 
 

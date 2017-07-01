@@ -1,5 +1,5 @@
-angular.module("labApp").controller("ResultController",['$scope','$routeParams','ResultService','testService',
-    function($scope,$routeParams,ResultService,testService){
+angular.module("labApp").controller("ResultController",['$scope','$location','$routeParams','ResultService','testService',
+    function($scope,$location,$routeParams,ResultService,testService){
         function setData() {
             $scope.namePatient=$routeParams.patientName;
             $scope.nameTest=$routeParams.testName;
@@ -85,6 +85,9 @@ angular.module("labApp").controller("ResultController",['$scope','$routeParams',
             });
         };
 
-
+        $scope.logout=()=>
+        {
+            $location.path('/');
+        };
 
     }])

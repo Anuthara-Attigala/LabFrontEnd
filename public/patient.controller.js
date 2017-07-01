@@ -39,5 +39,4 @@ angular.module("labApp").controller("PatientController",["$scope",'$location',"P
             $location.path('/');
         };
 
-
     }]);
