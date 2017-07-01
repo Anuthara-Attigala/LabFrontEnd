@@ -1,0 +1,62 @@
+<div class="quote_div">
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Lab Name</th>
+                <th>Laboratory Type</th>
+                <th>Department Name</th>
+                <th>Lab In Charge</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+            </tr>
+            <tr ng-repeat="lab in labs">
+                <td>{{lab.labName}}</td>
+                <td>{{lab.laboratoryTypeName}}</td>
+                <td>{{lab.departmentName}}</td>
+                <td>{{lab.labInCharge}}</td>
+                <td>{{lab.location}}</td>
+                <td>{{lab.email}}</td>
+                <td>{{lab.contactNumber}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>Lab Name:</td>
+                <td><input type="text" ng-model="newLab.labName"> </td>
+            </tr>
+            <tr>
+                <td>Lab Type:</td>
+                <td><select ng-model="selectedLabType" ng-options="y.laboratoryTypeName for y in labDepartmentTypes">
+                </select></td>
+            </tr>
+            <tr>
+                <td>Department:</td>
+                <td><select ng-model="selectedDep" ng-options="x.departmentName for x in labDepartments">
+                </select></td>
+
+            </tr>
+            <tr>
+                <td>Lab In Charge: </td>
+                <td><input type="text" ng-model="newLab.labInCharge"></td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td><input type="text" ng-model="newLab.location"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" ng-model="newLab.email"></td>
+            </tr>
+            <tr>
+                <td>Contact Number:</td>
+                <td><input type="text" ng-model="newLab.contactNumber"></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary" ng-click="addLab(newLab,selectedLabType,selectedDep)">Add</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
