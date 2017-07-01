@@ -2,7 +2,7 @@
 /**
  * Created by User on 7/1/2017.
  */
-angular.module('myApp').controller("reportController",['$scope','reportService','$routeParams',
+angular.module('labApp').controller("reportController",['$scope','reportService','$routeParams',
     function ($scope,reportService,$routeParams) {
         //  function getDetails() {
         //      testService.get().then(requests => {
