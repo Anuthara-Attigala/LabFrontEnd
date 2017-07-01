@@ -1,5 +1,5 @@
-angular.module('labApp').controller("testController",['$scope','testService','$routeParams',
-    function ($scope,testService,$routeParams) {
+angular.module('labApp').controller("testController",['$scope','testService','$routeParams','ResultService',
+    function ($scope,testService,$routeParams,ResultService) {
         function getDetails() {
             testService.get().then(requests => {
                 $scope.requests = requests;

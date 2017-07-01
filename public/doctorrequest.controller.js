@@ -8,6 +8,8 @@ angular.module("labApp").controller('DocRequestController',['$scope','DocRequest
         getRequests();
         $scope.adddoctorreq=(doctorRequest,selectedTest)=>{
             doctorRequest.testName=selectedTest.labTestName;
+            doctorRequest.status="new";
+            doctorRequest.action="add sample details";
             DocRequestService.adddoctorreq(doctorRequest).then(()=>{
                 doctorRequest.action="Sample Details";
                 doctorRequest.reqPerson="";
