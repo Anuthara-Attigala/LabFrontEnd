@@ -6,7 +6,7 @@ angular.module("labApp").factory("ResultService",['$http',function ($http) {
         updateResult:(id,result)=>$http.put('http://localhost:3000/results/'+id,result).then(response=>response.data),
 
 
-        getById:id=>$http.get('/requests/'+id).then(response=>response.data),
-        update:request=>$http.put('/requests/'+request._id,request).then(response=>response.data)
+        getById:id=>$http.get('http://localhost:3000/requests/'+id).then(response=>response.data),
+        update:request=>$http.put('http://localhost:3000/requests/'+request._id,request).then(response=>response.data)
     }
 }]);
