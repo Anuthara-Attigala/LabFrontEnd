@@ -28,7 +28,8 @@ angular.module("labApp").controller("LabController",['$scope','LabService',
             LabService.add(newLab).then(() => {
                 $scope.newLab = "";
                 console.log("lab added")
-            })
+            });
+            getLabs();
         }
         };
     }]);

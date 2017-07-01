@@ -3,7 +3,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         $routeProvider.when('/samplecentertypes', {
             templateUrl: 'samplecentertype.html',
             controller: 'SampleCenterTypeController'
-        }).when('/labtests',{
+        }).when('/test',{
             templateUrl:"test.html",
             controller:"LabTestController"
         }).when('/labtestview',{
@@ -23,7 +23,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl: 'pharmacy.html',
             controller: 'pharmacyController'
         }).when('/test',{
-            templateUrl : 'labtest.html',
+            templateUrl : 'labrequest.html',
             controller : 'testController'
         }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
             templateUrl : 'test2.html',
