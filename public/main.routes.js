@@ -1,6 +1,9 @@
 angular.module("labApp").config(['$routeProvider','$locationProvider',
     function ($routeProvider, $locationProvider) {
-        $routeProvider.when('/samplecentertypes', {
+        $routeProvider.when('/',{
+          templateUrl:'login.html',
+            controller:'LoginController'
+        }).when('/samplecentertypes', {
             templateUrl: 'samplecentertype.html',
             controller: 'SampleCenterTypeController'
         }).when('/labtests',{
@@ -45,6 +48,14 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/newdocRequest',{
             templateUrl:"newdocRequest.html",
             controller:"DocRequestController"
+        }).when('/doctorlogin',{
+
+            templateUrl:"newdocRequest.html",
+            controller:"DocRequestController"
+        }).when('/lablogin',{
+
+            templateUrl : 'labrequest.html',
+            controller : 'testController'
         });
 
         $locationProvider.html5Mode(true);
