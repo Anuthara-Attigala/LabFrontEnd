@@ -75,11 +75,12 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
               testService.getLocation().then(location=>{
                   console.log( 'ABC');
                  // $scope.location={};
-                  $scope.location=location[0];
-                  console.log( $scope.location);
+                  $scope.location.sampleCenterName=location[0].sampleCenterName;
+                  console.log( $scope.location.sampleCenterName);
               })
           }
           getlocation();
+
 
        /*   $scope.edit =(request)=>{
               getID();
