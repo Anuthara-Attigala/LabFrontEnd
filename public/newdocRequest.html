@@ -1,4 +1,5 @@
 <div>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -53,30 +54,60 @@
             </ul>
         </div>
     </nav>
-<div class="quote_div">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Sample Center Types</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="sampleCenterType in sampleCenterTypes">
-            <td>{{sampleCenterType.sampleCenterTypeName}}</td>
-            <td ng-model="sampleCenterType._id" ng-click="deleteSampleCenterType(sampleCenterType)"><button class="btn btn-danger">DELETE</button></td>
-        </tr>
-        </tbody>
-    </table>
-    <h3>Add Sample Center Type</h3>
+
+    <div  class="quote_div">
+
+    <h3>New Prescription</h3>
     <table>
         <tr>
-            <td>Sample Center Type: </td>
-            <td><input ng-model="sampleCenterType.sampleCenterTypeName"></td>
+            <td>Action: </td>
+            <td><input type="text" ng-model="doctorRequest.action" placeholder="Sample Details"></td>
         </tr>
         <tr>
-            <td><button class="btn btn-primary" ng-click="addSampleCenterType(sampleCenterType)">Add New Sample Center</button> </td>
+            <td>Doctor Name: </td>
+            <td><input type="text" ng-model="doctorRequest.reqPerson"></td>
+        </tr>
+        <tr>
+            <td>Patient Name: </td>
+            <td><input type="text" ng-model="doctorRequest.patientName"> </td>
+        </tr>
+        <tr>
+            <td>Requested Date: </td>
+            <td><input type="text" ng-model="doctorRequest.reqDate"><label>[yy//mm/dd]</label></td>
+        </tr>
+        <tr>
+            <td>Lab Test: </td>
+            <td>
+                <select>
+                    <option ng-repeat="labTest in labTests" ng-model="doctorRequest.testName">{{labTest.labTestName}}</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Due Date: </td>
+            <td><input type="text" ng-model="doctorRequest.dueDate"><label>[yy//mm/dd]</label></td>
+        </tr>
+        <tr>
+            <td>Priority: </td>
+            <td><input type="text" ng-model="doctorRequest.priority"><label>[High/ Medium/ Low]</label></td>
+        </tr>
+        <tr>
+        <tr>
+            <td>Status: </td>
+            <td><input type="text" ng-model="doctorRequest.status" placeholder="New"></td>
+        </tr>
+        <tr>
+            <td>Comment: </td>
+            <td><input type="text" ng-model="doctorRequest.comment"></td>
+        </tr>
+            <td>
+                <button class="btn btn-primary" ng-click="adddoctorreq(doctorRequest)">Add Prescription</button>
+            </td>
+        <td>
+            <button class="btn btn-primary" ng-click="clearall(doctorRequest)">Clear</button>
+        </td>
         </tr>
     </table>
-
-</div>
+    </div>
 </div>
