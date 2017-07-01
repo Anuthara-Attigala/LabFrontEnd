@@ -37,8 +37,8 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
         };
 */
         function getRequest() {
-            ResultService.getById($routeParams.requestID).then(request=>{
-                console.log($routeParams.requestID);
+            ResultService.getById($routeParams.requestId).then(request=>{
+                console.log($routeParams.requestId);
                 $scope.request={};
                 $scope.request = request[0];
                 console.log($scope.request);
@@ -63,7 +63,7 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
 
 
           function getID() {
-              testService.getById($routeParams.requestID).then(request => {
+              testService.getById($routeParams.requestId).then(request => {
                   $scope.request={};
                  // console.log($scope.request);
                   $scope.request = request[0];
