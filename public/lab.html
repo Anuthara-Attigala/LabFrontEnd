@@ -40,7 +40,7 @@
                 <th>Email</th>
                 <th>Contact Number</th>
             </tr>
-            <tr ng-repeat="lab in labs">
+            <tr  dir-paginate="lab in labs|itemsPerPage:5">
                 <td>{{lab.labName}}</td>
                 <td>{{lab.laboratoryTypeName}}</td>
                 <td>{{lab.departmentName}}</td>
