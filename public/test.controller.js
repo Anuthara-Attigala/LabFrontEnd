@@ -75,7 +75,7 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
               testService.getLocation().then(location=>{
                   console.log( 'ABC');
                  // $scope.location={};
-                  $scope.location=location;
+                  $scope.location=location[0];
                   console.log( $scope.location);
               })
           }
