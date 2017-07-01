@@ -3,10 +3,11 @@ angular.module("labApp").controller("ResultController",['$scope','$routeParams',
         function setData() {
             $scope.namePatient=$routeParams.patientName;
             $scope.nameTest=$routeParams.testName;
+            $scope.requestId=$routeParams.requestId;
         };
         function getData() {
             setData();
-            ResultService.findOne($routeParams.testName,$routeParams.patientName).then(result=>{
+            ResultService.findOne($routeParams.requestId).then(result=>{
                 $scope.resultTobe=result[0];
             })
         };
@@ -24,7 +25,8 @@ angular.module("labApp").controller("ResultController",['$scope','$routeParams',
         $scope.createResults=()=>{
             var result={
                 testName:$scope.nameTest,
-                patientName:$scope.namePatient
+                patientName:$scope.namePatient,
+                requestID:$routeParams.requestId
             }
             getTest();
             ResultService.create(result).then(()=>{
@@ -42,6 +44,7 @@ angular.module("labApp").controller("ResultController",['$scope','$routeParams',
             ResultService.updateResult($scope.resultTobe._id,results).then(()=>{
                 console.log("result added");
             });
+            getData();
         };
 
 

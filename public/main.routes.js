@@ -9,7 +9,7 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/labtestview',{
             templateUrl:"labTest.view.html",
             controller:"LabTestController"
-        }).when('/testresult/:testName/patient/:patientName',{
+        }).when('/testresult/:testName/patient/:patientName/request/:requestId',{
             templateUrl:"result.html",
             controller:"ResultController"
         }).when('/samplecenter',{
