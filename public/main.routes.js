@@ -30,7 +30,6 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl : 'test2.html',
             controller : 'testController'
 
-        
         }).when('/sample_collected/:requestID',{
             templateUrl : 'result.html'
 
