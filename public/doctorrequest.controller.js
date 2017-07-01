@@ -6,7 +6,8 @@ angular.module("labApp").controller('DocRequestController',['$scope','DocRequest
             })
         }
         getRequests();
-        $scope.adddoctorreq=(doctorRequest)=>{
+        $scope.adddoctorreq=(doctorRequest,selectedTest)=>{
+            doctorRequest.testName=selectedTest.labTestName;
             DocRequestService.adddoctorreq(doctorRequest).then(()=>{
                 doctorRequest.action="Sample Details";
                 doctorRequest.reqPerson="";
