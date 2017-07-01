@@ -19,6 +19,33 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
             templateUrl:"department.html",
             controller:"DepartmentController"
 
+        }).when('/pharmacy', {
+            templateUrl: 'pharmacy.html',
+            controller: 'pharmacyController'
+        }).when('/test',{
+            templateUrl : 'labtest.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
+            templateUrl : 'test2.html',
+            controller : 'testController'
+        }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestID',{
+            templateUrl : 'result.html',
+            controller :'ResultController'
+        }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {
+            templateUrl: 'report.html',
+            controller : 'reportController'
+        }).when('/sample_collected/:requestID', {
+            templateUrl: 'result.html'
+        }).when('/patientmanagement',{
+            templateUrl:"newPatients.html",
+            controller:"PatientManagementController"
+        }).when('/newrequests',{
+            templateUrl:"patient.html",
+            controller:"PatientController"
+        }).when('/newdocRequest',{
+            templateUrl:"newdocRequest.html",
+            controller:"DocRequestController"
         });
+
         $locationProvider.html5Mode(true);
     }]);
