@@ -1,6 +1,6 @@
 angular.module('labApp').controller("testController",['$scope','testService','$routeParams',
     function ($scope,testService,$routeParams) {
-        function getDetails() {
+     /* ////  function getDetails() {
             testService.get().then(requests => {
                 $scope.requests = requests;
 
@@ -44,7 +44,7 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
          };
          getOne();*/
 
-          function getID() {
+    /*      function getID() {
               testService.getById($routeParams.requestID).then(request => {
                   $scope.request={};
                  // console.log($scope.request);
@@ -70,16 +70,19 @@ angular.module('labApp').controller("testController",['$scope','testService','$r
               })
           }
 
+       */
           function getlocation() {
               testService.getLocation().then(location=>{
+                  console.log( 'ABC');
                   $scope.location={};
-                  $scope.location=location;
-                  console.log( $scope.location);
+                  $scope.location.sampleCenterName=location[0].sampleCenterName;
+                  console.log( $scope.location.sampleCenterName);
               })
           }
           getlocation();
 
-          $scope.edit =(request)=>{
+
+       /*   $scope.edit =(request)=>{
               getID();
           }
 
