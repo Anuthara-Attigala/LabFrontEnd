@@ -28,13 +28,13 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/test',{
             templateUrl : 'labrequest.html',
             controller : 'testController'
-        }).when('/testresult/:testName/patient/:patientName/new/:requestID',{
+        }).when('/testresult/:testName/patient/:patientName/new/:requestId',{
             templateUrl : 'test2.html',
             controller : 'testController'
         }).when('/testresult/:testName/patient/:patientName/sample_collected/:requestId',{
             templateUrl : 'result.html',
             controller :'ResultController'
-        }).when('/testresult/:testName/patient/:patientName/report_generated/:requestID', {
+        }).when('/testresult/:testName/patient/:patientName/report_generated/:requestId', {
             templateUrl: 'report.html',
             controller : 'reportController'
         }).when('/sample_collected/:requestID', {

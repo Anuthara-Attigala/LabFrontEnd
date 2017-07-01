@@ -32,7 +32,7 @@ angular.module('labApp').controller("reportController",['$scope','reportService'
                 // console.log($scope.request);
                 $scope.request = request[0];
                 console.log($scope.request);
-                $scope.requestId = request[0].requestId;
+                $scope.requestID = request[0].requestID;
                 $scope.patientName = request[0].patientName;
                 $scope.reqPerson = request[0].reqPerson;
                 $scope.testName = request[0].testName;
@@ -57,8 +57,7 @@ angular.module('labApp').controller("reportController",['$scope','reportService'
                $scope.request = request[0];
 
                console.log($scope.request);
-             //  $scope.testType=request[0].testName;
-             //  console.log($scope.testType);
+
            })
        }
 
