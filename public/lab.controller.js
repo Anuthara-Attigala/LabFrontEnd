@@ -27,9 +27,10 @@ angular.module("labApp").controller("LabController",['$scope','$location','LabSe
             newLab.departmentName = selectedDep.departmentName;
             LabService.add(newLab).then(() => {
                 $scope.newLab = "";
-                console.log("lab added")
+                console.log("lab added");
+                getLabs();
             });
-            getLabs();
+
         }
         };
 

@@ -12,6 +12,7 @@ angular.module("labApp").controller("SampleCenterController",["$scope","$locatio
             console.log(name);
            SampleCenterService.add(center).then(()=>{
                 getSampleCenters();
+                $scope.center="";
             });
         };
         $scope.setForm=(sampleCenter)=>{
@@ -28,8 +29,10 @@ angular.module("labApp").controller("SampleCenterController",["$scope","$locatio
         };
         getCenterTypes();
         $scope.updateCenter=(center)=>{
+            console.log(center);
             SampleCenterService.updateCenter(center).then(()=>{
                 getSampleCenters();
+                $scope.center=""
             });
         };
 
