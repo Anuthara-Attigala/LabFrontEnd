@@ -1,8 +1,8 @@
 angular.module('labApp').factory("DepartmentService",['$http',
     function($http){
         return{
-            get: ()=>$http.get('/departments').then(response =>response.data),
-            add: sampleCenterType=>$http.post('/departments',sampleCenterType).then(response =>response.data),
-            delete:id=>$http.delete('/departments/'+id).then(response=>response.data)
+            get: ()=>$http.get('http://localhost:3000/departments').then(response =>response.data),
+            add: department=>$http.post('http://localhost:3000/departments',department).then(response =>response.data),
+            delete:id=>$http.delete('http://localhost:3000/departments/'+id).then(response=>response.data)
         }
     }]);
