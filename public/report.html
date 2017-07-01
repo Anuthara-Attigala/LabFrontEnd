@@ -87,14 +87,16 @@
             <td>Test Name:</td>
             <td><label>{{testName}}</label></td>
         </tr>
-        <tr>
-            <td>Specimen</td>
-            <td><label>{{testType}}</label></td>
-        </tr>
-      <!--  <tr>
-            <td><button ng-click="edit(request)">EDIT</button> </td>
-        </tr>-->
-
+        <table class="table table-striped">
+            <tr>
+                <th>Field Name</th>
+                <th>Result</th>
+            </tr>
+            <tr ng-repeat="x in result.result">
+                <td>{{x.fieldName}}</td>
+                <td>{{x.result}}</td>
+            </tr>
+        </table>
 
     </table>
 </div>

@@ -52,15 +52,15 @@ angular.module('labApp').controller("reportController",['$scope','reportService'
 
 
        function getResultDetails(){
-           reportService.getResults($routeParams.patientName).then(request => {
+           reportService.getResults($routeParams.requestId).then(result => {
                $scope.request = {};
-               $scope.request = request[0];
+               $scope.result = result[0];
 
-               console.log($scope.request);
+               console.log($scope.result);
 
            })
        }
-
+       getResultDetails();
 
 
 
