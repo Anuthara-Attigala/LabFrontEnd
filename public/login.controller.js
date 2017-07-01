@@ -1,6 +1,6 @@
-// (function() {
-//     var app = angular.module('labApp', ['ui.router']);
-//
+(function() {
+    angular.module('labApp', ['ui.router']);
+
     angular.module.run(function($rootScope, $location, $state, LoginService) {
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){
@@ -11,7 +11,7 @@
             $state.transitionTo('login');
         }
     });
-//
+
     angular.module.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
 
@@ -21,7 +21,7 @@
                 templateUrl : 'login.html',
                 controller : 'LoginController'
             })
-            .state('home', {
+            .state('index', {
                 url : '/index',
                 templateUrl : 'index.html',
                 controller : 'HomeController'
@@ -29,7 +29,7 @@
     }]);
 
     angular.module.controller('LoginController', function($scope, $state, LoginService) {
-        //$rootScope.title = "AngularJS Login Sample";
+        $rootScope.title = "AngularJS Login Sample";
 
         $scope.formSubmit = function() {
             if(LoginService.login($scope.username, $scope.password)) {
@@ -105,4 +105,4 @@ angular.module.factory('LoginService',
 
 
 
-// })();
+})();

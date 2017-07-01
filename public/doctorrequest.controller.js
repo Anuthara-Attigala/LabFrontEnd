@@ -1,5 +1,5 @@
-angular.module("labApp").controller('DocRequestController',['$scope','DocRequestService',
-    function ($scope,DocRequestService) {
+angular.module("labApp").controller('DocRequestController',['$scope','DocRequestService','LabTestService',
+    function ($scope,DocRequestService,LabTestService) {
         function getRequests() {
             DocRequestService.get().then(docreq=>{
                 $scope.doctorrequest=docreq;
@@ -25,8 +25,11 @@ angular.module("labApp").controller('DocRequestController',['$scope','DocRequest
         function getLabTests(){
             LabTestService.get().then(labTests=>{
                 $scope.labTests=labTests;
-            })
+                console.log($scope.labTests);
+                console.log(labTests);
+            });
         }
+        getLabTests();
 
         $scope.clearall=(doctorRequest)=>{
                 $scope.doctorrequest={}
