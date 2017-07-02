@@ -1,0 +1,53 @@
+<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Laboratory System</a>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Doctor <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="newdocRequest">New Request</a></li>
+                            <li><a href="doctorresult">View Results</a> </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Patient <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="patientmanagement">Patient Management</a></li>
+                            <li><a href="newrequests">Patient Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="btn btn-success" ng-click="logout()">Logout</button>
+                    </li>
+
+                </ul>
+            </div>
+            </div>
+    </nav>
+
+    <div class="quote_div">
+        <input type="text" ng-model="requestId">
+        <button ng-click="search(requestId)">Search</button>
+        <table class="table table-striped">
+            <tr>
+                <th>Patient Name: {{result.patientName}}</th>
+                <th>Test Name:{{result.testName}}</th>
+
+            </tr>
+            <tr>
+                <table class="table table-striped">
+                    <tr>
+                        <th>Field</th>
+                        <th>Result</th>
+                    </tr>
+                    <tr ng-repeat="x in result.result">
+                        <td>{{x.fieldName}}</td>
+                        <td>{{x.result}}</td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    </div>
+
+</div>

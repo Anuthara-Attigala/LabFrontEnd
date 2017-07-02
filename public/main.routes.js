@@ -59,6 +59,9 @@ angular.module("labApp").config(['$routeProvider','$locationProvider',
         }).when('/labmgmt',{
             templateUrl:'lab.html',
             controller:'LabController'
+        }).when('/doctorresult',{
+            templateUrl:'doctor.result.html',
+            controller:'DoctorResultController'
         });
 
         $locationProvider.html5Mode(true);

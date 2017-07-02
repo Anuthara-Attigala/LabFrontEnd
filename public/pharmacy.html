@@ -61,7 +61,7 @@
         </tr>
         <tr>
             <td>Quantity </td>
-            <td><input ng-model="user.quantity"></td>
+            <td><input ng-model="user.quantity">(units)</td>
         </tr>
         <tr>
             <td>Manufactured Date </td>
@@ -87,7 +87,7 @@
         <tr></tr>
         <tr>
             <td></td>
-            <td>Drug Code<input ng-model="user.drugID"></td>
+            <td>Chemical Code<input ng-model="user.drugID"></td>
             <td><button class="btn btn-primary" ng-mmodel="user.drugID" ng-click="getUser(user)">SEARCH</button></td>
         </tr>
     </table>
@@ -98,8 +98,8 @@
         <thead>
         <tr>
             <th>Index</th>
-            <th>Drug ID</th>
-            <th>Drug Name</th>
+            <th>Chemical ID</th>
+            <th>Chemical Name</th>
             <th>Quantity</th>
             <th>Manufactured Date</th>
             <th>Expiration Date</th>
